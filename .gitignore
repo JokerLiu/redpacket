@@ -1,5 +1,7 @@
 target/
-!.mvn/wrapper/maven-wrapper.jar
+###!.mvn/wrapper/maven-wrapper.jar
+
+/.mvn/
 
 ### STS ###
 .apt_generated
@@ -16,6 +18,8 @@ target/
 *.iml
 *.ipr
 
+
+
 ### NetBeans ###
 nbproject/private/
 build/
@@ -26,3 +30,4 @@ nbdist/
 
 
 *.pfx
+*.yml
