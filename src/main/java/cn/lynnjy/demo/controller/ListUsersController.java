@@ -7,10 +7,11 @@ import cn.lynnjy.demo.util.ResponseMessage;
 import com.alibaba.fastjson.JSONObject;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(value = "ListUsersController",description = "获取已领红包接口列表接口")
+@Api(value = "ListUsersController",description = "获取已领红包接口列表接口",position = 4)
 @RestController
 public class ListUsersController {
     /**
@@ -18,8 +19,8 @@ public class ListUsersController {
      * @param id
      * @return
      */
-    @GetMapping("/list")
-    public JSONObject list(@RequestParam String id){
+    @GetMapping("/pack-list/packet/{id}")
+    public JSONObject list(@PathVariable String id){
 
         //根据id获取本地对象
         LocalMoney localMoney = CacheManage.getFromDatas(id);

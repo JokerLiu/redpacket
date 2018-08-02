@@ -6,11 +6,13 @@ import cn.lynnjy.demo.util.CacheManage;
 import cn.lynnjy.demo.util.ResponseMessage;
 import cn.lynnjy.demo.util.Utils;
 import com.alibaba.fastjson.JSONObject;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@Api(value = "GrabController",description = "用户抢、拆红包的接口",position = 3)
 @RestController
 //用于抢红包的控制器
 public class GrabController {
@@ -38,7 +40,7 @@ public class GrabController {
      * @param
      * @return jsonobj
      */
-    @PostMapping(value = "/receive/get")
+    @PostMapping(value = "/pack-list/packet")
     public JSONObject grab(@RequestBody User user){
         //红包id 根据获取到的红包id 取出本地LocalMoney对象并插入ip地址
         if(CacheManage.addUser(user.getId(), user.getNickname())){
@@ -61,7 +63,7 @@ public class GrabController {
      * @param
      * @return jsonobj
      */
-    @PostMapping(value = "/receive/open")
+    @PutMapping(value = "/pack-list/packet")
     public JSONObject open(@RequestBody User user){
         String id = user.getId();
         String nickname = user.getNickname();

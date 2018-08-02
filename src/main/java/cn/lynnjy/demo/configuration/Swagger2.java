@@ -28,7 +28,7 @@ public class Swagger2 {
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
                 .title("Springboot利用swagger构建文档")
-                .description("restful风格 http://www.lynnjy.cn")
+                .description("restful风格 https://demo.lynnjy.cn")
                 .termsOfServiceUrl("http://www.lynnjy.cn")
                 .version("1.0")
                 .build();

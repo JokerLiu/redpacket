@@ -7,11 +7,13 @@ import cn.lynnjy.demo.pojo.LuckyMoney;
 import cn.lynnjy.demo.service.RedisManage;
 import cn.lynnjy.demo.util.ResponseMessage;
 import com.alibaba.fastjson.JSONObject;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(value = "SendController",description = "用户发红包控制器",position = 2)
 @RestController
 //用于发红包的控制器
 public class SendController {
@@ -19,7 +21,7 @@ public class SendController {
     @Autowired
     private RedisManage redisManage;
 
-    @PostMapping(value = "/send")
+    @PostMapping(value = "/pack-list")
     public JSONObject sendLuckyMoney(@RequestBody LuckyMoney luckyMoney){
 
         //获取LuckMoney属性
