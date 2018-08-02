@@ -5,11 +5,12 @@ import cn.lynnjy.demo.model.LocalMoney;
 import cn.lynnjy.demo.util.CacheManage;
 import cn.lynnjy.demo.util.ResponseMessage;
 import com.alibaba.fastjson.JSONObject;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@Api(value = "ListUsersController",description = "获取已领红包接口列表接口")
 @RestController
 public class ListUsersController {
     /**
